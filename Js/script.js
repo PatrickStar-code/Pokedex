@@ -9,8 +9,13 @@ $(document).ready(function () {
             $(".id").html("<p id='id_pokemon'>" + data["id"] + "</p>");
             for (let i = 0; i < data["types"].length; i++) {
                 $(".tipo").append("<span>" + data["types"][i]["type"]["name"] + "</span><br>");
-
             }
+           
+            for (let i = 0; i < data["abilities"].length; i++) {
+                $("#itens-sobre-habilidades").append("<li >" + data["abilities"][i]["ability"]["name"] + "</li>");
+            }
+      
+
         }
     );
 });
@@ -31,14 +36,19 @@ $("#anterior").click(function (e) {
                 $("#tela-pokemon").empty();
                 $(".id").empty();
                 $(".tipo").empty();
+                $("#itens-sobre-habilidades").empty();
+
 
                 $("#nome-pokemon").html(data["name"]);
                 $("#tela-pokemon").append('<img src="' + data["sprites"]["front_default"] + '" alt="" class="img-responsive" width="100%">')
                 $(".id").html("<p id='id_pokemon'>" + data["id"] + "</p>");
                 for (let i = 0; i < data["types"].length; i++) {
                     $(".tipo").append("<span>" + data["types"][i]["type"]["name"] + "</span><br>");
-
                 }
+                for (let i = 0; i < data["abilities"].length; i++) {
+                    $("#itens-sobre-habilidades").append("<li >" + data["abilities"][i]["ability"]["name"] + "</li>");
+                }
+                
             }
         );
     }
@@ -60,13 +70,17 @@ $("#proximo").click(function (e) {
             $("#tela-pokemon").empty();
             $(".id").empty();
             $(".tipo").empty();
+            $("#itens-sobre-habilidades").empty();
+
 
             $("#nome-pokemon").html(data["name"]);
             $("#tela-pokemon").append('<img src="' + data["sprites"]["front_default"] + '" alt="" class="img-responsive" width="100%">')
             $(".id").html("<p id='id_pokemon'>" + data["id"] + "</p>");
             for (let i = 0; i < data["types"].length; i++) {
                 $(".tipo").append("<span>" + data["types"][i]["type"]["name"] + "</span><br>");
-
+            }
+            for (let i = 0; i < data["abilities"].length; i++) {
+                $("#itens-sobre-habilidades").append("<li >" + data["abilities"][i]["ability"]["name"] + "</li>");
             }
         }
     );
@@ -83,12 +97,16 @@ $("#form-pesquisa").submit(function (e) {
         $("#tela-pokemon").empty();
         $(".id").empty();
         $(".tipo").empty();
+        $("#itens-sobre-habilidades").empty();
 
         $("#nome-pokemon").html(data["name"]);
         $("#tela-pokemon").append('<img src="' + data["sprites"]["front_default"] + '" alt="" class="img-responsive" width="100%">')
         $(".id").html("<p id='id_pokemon'>" + data["id"] + "</p>");
         for (let i = 0; i < data["types"].length; i++) {
             $(".tipo").append("<span>" + data["types"][i]["type"]["name"] + "</span><br>");
+        }
+        for (let i = 0; i < data["abilities"].length; i++) {
+            $("#itens-sobre-habilidades").append("<li >" + data["abilities"][i]["ability"]["name"] + "</li>");
         }
     }
     );
